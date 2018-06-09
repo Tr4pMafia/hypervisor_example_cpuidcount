@@ -19,7 +19,7 @@
 #include <bfvmm/hve/arch/intel_x64/vcpu/vcpu.h>
 #include <bfvmm/hve/arch/intel_x64/exit_handler/exit_handler.h>
 
-class exit_handler_cpuidcount : public exit_handler
+class exit_handler_cpuidcount : public bfvmm::intel_x64::exit_handler
 {
 public:
 
@@ -55,7 +55,7 @@ public:
             m_count++;
         }
 
-        exit_handler_intel_x64::handle_exit(reason);
+        exit_handler::handle_exit(reason);
     }
 
 private:
